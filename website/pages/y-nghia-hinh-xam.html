@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ý nghĩa hình xăm - Anh Già Tattoo (tuấn đàm)</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #0a0a0a;
+            margin: 50px auto;
+            padding: 40px;
+            max-width: 1200px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #d4af37;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #fff;
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        .modal-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .modal-info h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 30px;
+        }
+
+        .modal-info p {
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-info h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .modal-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-info li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .modal-info li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.5rem;
+        }
+
+        /* Responsive cho modal */
+        @media (max-width: 1024px) {
+            .modal-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .modal-content {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .modal-info h2 {
+                font-size: 2rem;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .close-modal {
+                font-size: 30px;
+                top: 10px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="../images/picture/logo/logo.jpg" alt="Anh Già Tattoo Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h2>ANH GIÀ</h2>
+                        <span>TATTOO</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="about.html" class="nav-link">About us</a></li>
+                    <li><a href="gallery.html" class="nav-link">Thư viện</a></li>
+                    <li><a href="y-nghia-hinh-xam.html" class="nav-link active">Ý nghĩa hình xăm</a></li>
+                    <li><a href="contact.html" class="nav-link">Liên hệ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Ý nghĩa hình xăm</h1>
+                <div class="divider"></div>
+                <p>Khám phá ý nghĩa sâu sắc đằng sau các tác phẩm nghệ thuật hình xăm</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="y-nghia-hinh-xam">
+            <div class="container">
+                <div class="y-nghia-content">
+                    <p>Hình xăm không chỉ là nghệ thuật trang trí, mà còn mang nhiều ý nghĩa sâu sắc về văn hóa, tâm linh và thể hiện cá tính của mỗi người. Hãy cùng khám phá những ý nghĩa đằng sau các loại hình xăm phổ biến.</p>
+
+                    <div class="y-nghia-grid">
+                        <!-- Hình xăm rồng -->
+                        <div class="y-nghia-item" onclick="showModal('dragon')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/dragon.jpg" alt="Hình xăm rồng">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Rồng</h3>
+                                <p>Rồng là biểu tượng của sức mạnh, may mắn và sự thịnh vượng trong văn hóa Á Đông.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm phượng hoàng -->
+                        <div class="y-nghia-item" onclick="showModal('phuonghoang')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/phuonghoang.jpg" alt="Hình xăm phượng hoàng">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Phượng Hoàng</h3>
+                                <p>Phượng hoàng tượng trưng cho sự tái sinh, vẻ đẹp và sự kiên cường.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm hổ -->
+                        <div class="y-nghia-item" onclick="showModal('sutu')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/sutu.jpg" alt="Hình xăm hổ">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Hổ</h3>
+                                <p>Hổ đại diện cho sức mạnh, dũng mãnh và sự bảo vệ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm rùa -->
+                        <div class="y-nghia-item" onclick="showModal('rua')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/rua.jpg" alt="Hình xăm rùa">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Rùa</h3>
+                                <p>Rùa là biểu tượng của sự trường thọ, kiên nhẫn và trí tuệ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm samurai -->
+                        <div class="y-nghia-item" onclick="showModal('samurai')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/samurai.jpg" alt="Hình xăm samurai">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Samurai</h3>
+                                <p>Samurai tượng trưng cho danh dự, lòng trung thành và tinh thần võ sĩ đạo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm Daruma -->
+                        <div class="y-nghia-item" onclick="showModal('daruma')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/daruma.jpg" alt="Hình xăm Daruma">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Daruma</h3>
+                                <p>Daruma là biểu tượng của sự kiên trì và may mắn trong văn hóa Nhật Bản.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm Koi -->
+                        <div class="y-nghia-item" onclick="showModal('kylan')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/kylan.jpg" alt="Hình xăm Koi">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Cá Koi (Koi)</h3>
+                                <p>Cá Koi biểu thị sự kiên cường, may mắn và khả năng vượt qua khó khăn.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm Quan Công -->
+                        <div class="y-nghia-item" onclick="showModal('quancong')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/quancong.jpg" alt="Hình xăm Quan Công">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Quan Công</h3>
+                                <p>Quan Công là biểu tượng của lòng trung thành, chính nghĩa và sự bảo vệ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hình xăm Hanya -->
+                        <div class="y-nghia-item" onclick="showModal('hanya')">
+                            <div class="y-nghia-image">
+                                <img src="../images/picture/ynghia/hanya.jpg" alt="Hình xăm Hanya">
+                                <div class="view-more">
+                                    <span>Xem ý nghĩa</span>
+                                </div>
+                            </div>
+                            <div class="y-nghia-info">
+                                <h3>Hình xăm Hanya</h3>
+                                <p>Mặt nạ Hanya thể hiện sự phẫn uất biến thành sức mạnh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="tattooModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>ANH GIÀ</h2>
+                    <span>TATTOO STUDIO</span>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="../index.html">Trang chủ</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="gallery.html">Thư viện</a></li>
+                        <li><a href="y-nghia-hinh-xam.html">Ý nghĩa hình xăm</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <h4>Theo dõi chúng tôi:</h4>
+                    <div class="social-icons">
+                        <a href="https://instagram.com" target="_blank" class="social-icon instagram">Instagram</a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon facebook">Facebook</a>
+                        <a href="https://zalo.me" target="_blank" class="social-icon zalo">Zalo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anh Già Tattoo (tuấn đàm). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Data cho các hình xăm
+        const tattooData = {
+            dragon: {
+                title: "Hình xăm Rồng",
+                image: "../images/picture/ynghia/dragon.jpg",
+                content: `
+                    <h3>Biểu tượng của sức mạnh</h3>
+                    <p>Rồng là biểu tượng của sức mạnh, may mắn và sự thịnh vượng trong văn hóa Á Đông. Hình xăm rồng thể hiện khát vọng vươn lên và sự bảo vệ.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Sức mạnh và quyền lực tối thượng</li>
+                        <li>May mắn và fortune tốt lành</li>
+                        <li>Sự bảo vệ che chở</li>
+                        <li>Khát vọng vươn lên trong cuộc sống</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Hình xăm rồng thường được xăm ở các vị trí lớn như lưng, ngực, tay hoặc chân để thể hiện được sự uy nghi và majesty của biểu tượng này.</p>
+                `
+            },
+            phuonghoang: {
+                title: "Hình xăm Phượng Hoàng",
+                image: "../images/picture/ynghia/phuonghoang.jpg",
+                content: `
+                    <h3>Biểu tượng của sự tái sinh</h3>
+                    <p>Phượng hoàng tượng trưng cho sự tái sinh, vẻ đẹp và sự kiên cường. Đây là lựa chọn của những người đã vượt qua khó khăn trong cuộc đời.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Sự tái sinh và hồi sinh</li>
+                        <li>Vẻ đẹp và gracefulness</li>
+                        <li>Sự kiên cường và bền bỉ</li>
+                        <li>Khả năng vượt qua nghịch cảnh</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Phượng hoàng thường được xăm ở vai, lưng hoặc ngực để thể hiện sự tung bay và freedom của loài bird mythical này.</p>
+                `
+            },
+            sutu: {
+                title: "Hình xăm Hổ",
+                image: "../images/picture/ynghia/sutu.jpg",
+                content: `
+                    <h3>Vua của muông thú</h3>
+                    <p>Hổ đại diện cho sức mạnh, dũng mãnh và sự bảo vệ. Người xăm hổ thường muốn thể hiện quyền lực và bản lĩnh trong cuộc sống.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Sức mạnh và quyền lực</li>
+                        <li>Dũng mãnh và lòng can đảm</li>
+                        <li>Sự bảo vệ và che chở</li>
+                        <li>Bản lĩnh và sự self-confidence</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Hình xăm hổ thường được xăm ở tay, ngực, lưng hoặc vai để thể hiện sự mạnh mẽ và majesty của king of the jungle.</p>
+                `
+            },
+            rua: {
+                title: "Hình xăm Rùa",
+                image: "../images/picture/ynghia/rua.jpg",
+                content: `
+                    <h3>Biểu tượng của sự trường thọ</h3>
+                    <p>Rùa là biểu tượng của sự trường thọ, kiên nhẫn và trí tuệ. Hình xăm rùa mang ý nghĩa về một cuộc sống bình an và dài lâu.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Sự trường thọ và long life</li>
+                        <li>Kiên nhẫn và endurance</li>
+                        <li>Trí tuệ và sự khôn ngoan</li>
+                        <li>Sự ổn định và grounded</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Hình xăm rùa thường được xăm ở lưng, vai hoặc cẳng tay để thể hiện sự solid và enduring của biểu tượng này.</p>
+                `
+            },
+            samurai: {
+                title: "Hình xăm Samurai",
+                image: "../images/picture/ynghia/samurai.jpg",
+                content: `
+                    <h3>Tinh thần võ sĩ đạo</h3>
+                    <p>Samurai tượng trưng cho danh dự, lòng trung thành và tinh thần võ sĩ đạo. Đây là biểu tượng của sự kỷ luật và bản lĩnh.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Danh dự và integrity</li>
+                        <li>Lòng trung thành tuyệt đối</li>
+                        <li>Tinh thần võ sĩ đạo</li>
+                        <li>Sự kỷ luật và self-discipline</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Hình xăm samurai thường được xăm ở tay, lưng hoặc ngực để thể hiện sự mạnh mẽ và dignity của warrior class.</p>
+                `
+            },
+            daruma: {
+                title: "Hình xăm Daruma",
+                image: "../images/picture/ynghia/daruma.jpg",
+                content: `
+                    <h3>Biểu tượng của sự kiên trì</h3>
+                    <p>Daruma là biểu tượng của sự kiên trì và may mắn trong văn hóa Nhật Bản. Mỗi khi hoàn thành mục tiêu, người ta sẽ tô một mắt của Daruma.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Sự kiên trì và determination</li>
+                        <li>May mắn và good fortune</li>
+                        <li>Sự focus và concentration</li>
+                        <việc hoàn thành goals</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Daruma thường được xăm ở tay hoặc cẳng chân như một reminder để luôn kiên trì追求 mục tiêu.</p>
+                `
+            },
+            kylan: {
+                title: "Hình xăm Cá Koi (Koi)",
+                image: "../images/picture/ynghia/kylan.jpg",
+                content: `
+                    <h3>Biểu tượng của sự kiên cường</h3>
+                    <p>Cá Koi biểu thị sự kiên cường, may mắn và khả năng vượt qua khó khăn. Cá Koi vượt thác thành rồng là biểu tượng của thành công.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Sự kiên cường và resilience</li>
+                        <li>May mắn và prosperity</li>
+                        <li>Khả năng vượt qua obstacles</li>
+                        <li>Thành công và achievement</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Koi fish thường được xăm ở tay, lưng hoặc chân, thường được thiết kế trong một flowing movement để thể hiện movement của cá swimming upstream.</p>
+                `
+            },
+            quancong: {
+                title: "Hình xăm Quan Công",
+                image: "../images/picture/ynghia/quancong.jpg",
+                content: `
+                    <h3>Biểu tượng của chính nghĩa</h3>
+                    <p>Quan Công là biểu tượng của lòng trung thành, chính nghĩa và sự bảo vệ. Nhiều người xăm Quan Công để cầu mong sự che chở.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Lòng trung thành tuyệt đối</li>
+                        <li>Chính nghĩa và righteousness</li>
+                        <li>Sự bảo vệ và che chở</li>
+                        <li>Brotherhood và loyalty</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Quan Công thường được xăm ở lưng hoặc ngực để thể hiện sự majestic và power của deity này.</p>
+                `
+            },
+            hanya: {
+                title: "Hình xăm Hanya",
+                image: "../images/picture/ynghia/hanya.jpg",
+                content: `
+                    <h3>Mặt nạ của sự phẫn uất</h3>
+                    <p>Mặt nạ Hanya thể hiện sự phẫn uất biến thành sức mạnh. Nó mang ý nghĩa về sự chuyển hóa và vẻ đẹp trong nỗi đau.</p>
+
+                    <h3>Ý nghĩa sâu sắc</h3>
+                    <ul>
+                        <li>Sự chuyển hóa và transformation</li>
+                        <hiểu biết về human emotions</li>
+                        <hiểu biết về love và jealousy</li>
+                        <Beauty trong suffering</li>
+                    </ul>
+
+                    <h3>Vị trí xăm lý tưởng</h3>
+                    <p>Hanya mask thường được xăm ở tay, ngực hoặc back, thường được design với dramatic expression để thể hiện intense emotions.</p>
+                `
+            }
+        };
+
+        // Lấy parameter từ URL
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Hiển thị modal
+        function showModal(type) {
+            const modal = document.getElementById('tattooModal');
+            const tattoo = tattooData[type];
+
+            if (tattoo) {
+                document.getElementById('modalImage').src = tattoo.image;
+                document.getElementById('modalTitle').textContent = tattoo.title;
+                document.getElementById('modalContent').innerHTML = tattoo.content;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Ngăn scroll khi modal mở
+            }
+        }
+
+        // Đóng modal
+        function closeModal() {
+            const modal = document.getElementById('tattooModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Cho phép scroll lại
+        }
+
+        // Đóng modal khi click ra ngoài
+        window.onclick = function(event) {
+            const modal = document.getElementById('tattooModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Đóng modal khi nhấn phím ESC
+        document.onkeydown = function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

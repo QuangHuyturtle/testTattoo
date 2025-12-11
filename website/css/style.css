@@ -46,13 +46,38 @@ body {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: rotate(360deg);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .logo h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 28px;
     font-weight: 700;
     color: var(--white-color);
     letter-spacing: 2px;
-    margin-bottom: -5px;
+    margin: 0;
+    line-height: 1;
 }
 
 .logo span {
@@ -60,6 +85,7 @@ body {
     font-size: 14px;
     color: var(--gold-color);
     letter-spacing: 4px;
+    margin-top: 2px;
 }
 
 .nav-menu {
@@ -470,6 +496,19 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .logo span {
+        font-size: 12px;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -1102,4 +1141,125 @@ section {
     .social-links-horizontal {
         justify-content: center;
     }
+}
+
+/* Ý nghĩa hình xăm Section */
+.y-nghia-hinh-xam {
+    padding: 100px 0;
+    background-color: #0a0a0a;
+}
+
+.y-nghia-content {
+    margin-top: 50px;
+}
+
+.y-nghia-content > p {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #999;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.y-nghia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.y-nghia-item {
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.y-nghia-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+.y-nghia-item {
+    cursor: pointer;
+}
+
+.view-more {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.view-more span {
+    color: #d4af37;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.y-nghia-item:hover .view-more {
+    opacity: 1;
+}
+
+.y-nghia-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.y-nghia-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.y-nghia-item:hover .y-nghia-image img {
+    transform: scale(1.05);
+}
+
+.y-nghia-info {
+    padding: 25px;
+}
+
+.y-nghia-info h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.y-nghia-info p {
+    color: #999;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsive cho Ý nghĩa hình xăm */
+@media (max-width: 768px) {
+    .y-nghia-hinh-xam {
+        padding: 70px 0;
+    }
+
+    .y-nghia-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .y-nghia-image {
+        height: 200px;
+    }
+}
 }
